@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/todos-list-react-typescript/static/js/main.228d652d.js",
+    "static/js/787.ba6b5378.chunk.js": "/todos-list-react-typescript/static/js/787.ba6b5378.chunk.js",
+    "index.html": "/todos-list-react-typescript/index.html",
+    "main.228d652d.js.map": "/todos-list-react-typescript/static/js/main.228d652d.js.map",
+    "787.ba6b5378.chunk.js.map": "/todos-list-react-typescript/static/js/787.ba6b5378.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.228d652d.js"
+  ]
+}
