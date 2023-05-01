@@ -9,7 +9,7 @@ Tasks are kept in the local storage, so they are not lost after refreshing the p
 
 ## Live 📍
 
-### [Demo](https://piotrpaczuski.github.io/todos-list-react/)
+### [Demo](https://piotrpaczuski.github.io/todos-list-react-typescript/)
 
 ## Tech/framework used 🔧
 
