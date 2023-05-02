@@ -1,12 +1,14 @@
-import { useSelector } from "react-redux";
+import React from "react";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import Header from "../../../common/Header";
 import Section from "../../../common/Section";
-import { StyledWrapper } from "../../styledWrapper";
 import { getTaskById } from "../tasksSlice";
-import React from "react";
 
-export default () => {
+import { StyledWrapper } from "../../styledWrapper";
+
+const TaskPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const task = useSelector((state) => getTaskById(state, id));
 
@@ -28,3 +30,5 @@ export default () => {
     </>
   );
 };
+
+export default TaskPage;
