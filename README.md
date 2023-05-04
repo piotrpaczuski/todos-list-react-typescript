@@ -4,8 +4,7 @@
 
 ## Project Overview 🎉
 
-This is a simple application that allows you to create a list of tasks. You can add, edit, delete and mark as completed.
-Tasks are kept in the local storage, so they are not lost after refreshing the page. You can also get an example list of tasks by clicking the "Get example tasks" button. The application is based on the React library and uses Redux for state management. The application is fully responsive and works on all devices.
+Tasks List is a simple application that allows you to create a list of tasks. You can add, edit, delete, and mark tasks as completed. The tasks are kept in local storage, so they are not lost after refreshing the page. You can also get an example list of tasks by clicking the "Get example tasks" button. The application is based on the React library and uses Redux for state management. It is fully responsive and works on all devices.
 
 ## Live 📍
 
