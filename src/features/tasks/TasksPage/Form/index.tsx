@@ -1,36 +1,36 @@
-import { nanoid } from "@reduxjs/toolkit";
-import React, {
-  MutableRefObject,
-  SyntheticEvent,
-  useRef,
-  useState,
-} from "react";
+import React, { FC, SyntheticEvent, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
+
 import { addTask } from "../../tasksSlice";
+
 import { StyledButton, StyledForm } from "./styled";
 import { StyledInput, StyledWrapper } from "../../../styledWrapper";
 
-const Form: React.FC = () => {
-  const [newTaskContent, setNewTaskContent] = useState("");
-  const inputRef: MutableRefObject<any> = useRef(null);
-
+const Form: FC = () => {
+  const [newTaskContent, setNewTaskContent] = useState<string>("");
+  const inputRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
 
   const onFormSubmit = (event: SyntheticEvent): void => {
     event.preventDefault();
 
-    if (newTaskContent.trim()) {
-      dispatch(
-        addTask({
-          content: newTaskContent.trim(),
-          done: false,
-          id: nanoid(),
-        })
-      );
-      setNewTaskContent("");
+    if (!newTaskContent.trim()) {
+      return;
     }
-    inputRef.current.focus();
-    return setNewTaskContent("");
+
+    dispatch(
+      addTask({
+        content: newTaskContent.trim(),
+        done: false,
+        id: nanoid(),
+      })
+    );
+    setNewTaskContent("");
+
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
 
   return (
