@@ -9,6 +9,7 @@ import {
   toggleTaskDone,
 } from "../../tasksSlice";
 import searchQueryParamsName from "../searchQueryParamsName";
+import { TasksTypes } from "../../tasksTypes";
 
 import {
   StyledButtonAdd,
@@ -19,18 +20,12 @@ import {
   StyledSpan,
 } from "./styled";
 
-interface Tasks {
-  id: string;
-  content: string;
-  done: boolean;
-}
-
 const TaskList: React.FC = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const query = searchParams.get(searchQueryParamsName);
 
-  const tasks: Tasks[] = useSelector((state) =>
+  const tasks: TasksTypes[] = useSelector((state) =>
     selectTaskByQuery(state, query)
   );
   const hideDone = useSelector(selectHideDone);
