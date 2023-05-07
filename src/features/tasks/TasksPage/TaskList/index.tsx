@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+import { RootState } from "../../../../store";
 import {
   removeTasks,
   selectHideDone,
@@ -9,7 +10,6 @@ import {
   toggleTaskDone,
 } from "../../tasksSlice";
 import searchQueryParamsName from "../searchQueryParamsName";
-import { TasksTypes } from "../../tasksTypes";
 
 import {
   StyledButtonAdd,
@@ -23,9 +23,9 @@ import {
 const TaskList: React.FC = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const query = searchParams.get(searchQueryParamsName);
+  const query = searchParams.get(searchQueryParamsName) as string;
 
-  const tasks: TasksTypes[] = useSelector((state) =>
+  const tasks = useSelector((state: RootState) =>
     selectTaskByQuery(state, query)
   );
   const hideDone = useSelector(selectHideDone);

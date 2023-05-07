@@ -7,10 +7,11 @@ import Section from "../../../common/Section";
 import { getTaskById } from "../tasksSlice";
 
 import { StyledWrapper } from "../../styledWrapper";
+import { RootState } from "../../../store";
 
 const TaskPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const task = useSelector((state) => getTaskById(state, id));
+  const task = useSelector((state: RootState) => getTaskById(state, id));
 
   return (
     <>
