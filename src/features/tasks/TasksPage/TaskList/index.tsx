@@ -2,14 +2,14 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { RootState } from "../../../../store";
 import {
   removeTasks,
   selectHideDone,
   selectTaskByQuery,
   toggleTaskDone,
 } from "../../tasksSlice";
-import searchQueryParamsName from "../searchQueryParamsName";
+import { RootState } from "../../../../store";
+import { searchQueryParamsName } from "../searchQueryParamsName";
 
 import {
   StyledButtonAdd,

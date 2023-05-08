@@ -4,8 +4,8 @@ import { nanoid } from "@reduxjs/toolkit";
 
 import { addTask } from "../../tasksSlice";
 
-import { StyledButton, StyledForm } from "./styled";
 import { StyledInput, StyledWrapper } from "../../../styledWrapper";
+import { StyledButton, StyledForm } from "./styled";
 
 const Form: FC = () => {
   const [newTaskContent, setNewTaskContent] = useState<string>("");

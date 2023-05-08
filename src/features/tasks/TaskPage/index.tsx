@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 import Header from "../../../common/Header";
 import Section from "../../../common/Section";
 import { getTaskById } from "../tasksSlice";
+import { RootState } from "../../../store";
 
 import { StyledWrapper } from "../../styledWrapper";
-import { RootState } from "../../../store";
 
 const TaskPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();

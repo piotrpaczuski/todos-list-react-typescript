@@ -2,8 +2,9 @@ import React from "react";
 
 import Header from "../../common/Header";
 import Section from "../../common/Section";
-import { StyledLink } from "./styled";
+
 import { StyledWrapper } from "../styledWrapper";
+import { StyledLink } from "./styled";
 
 const AuthorPage: React.FC = () => (
   <>
