@@ -1,1 +1,1 @@
-export const searchQueryParamsName: string = "szukaj";
+export const searchQueryParamsName = "szukaj";

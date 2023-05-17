@@ -1,4 +1,4 @@
-import React, { FC, SyntheticEvent, useRef, useState } from "react";
+import { SyntheticEvent, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
@@ -7,12 +7,12 @@ import { addTask } from "../../tasksSlice";
 import { StyledInput, StyledWrapper } from "../../../styledWrapper";
 import { StyledButton, StyledForm } from "./styled";
 
-const Form: FC = () => {
-  const [newTaskContent, setNewTaskContent] = useState<string>("");
+const Form = () => {
+  const [newTaskContent, setNewTaskContent] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
 
-  const onFormSubmit = (event: SyntheticEvent): void => {
+  const onFormSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
 
     if (!newTaskContent.trim()) {

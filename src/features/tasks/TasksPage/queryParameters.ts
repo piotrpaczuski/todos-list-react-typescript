@@ -2,7 +2,7 @@ import { useHistory, useLocation } from "react-router-dom";
 
 interface QueryParam {
   key: string;
-  value: string | undefined;
+  value: string;
 }
 
 export const useQueryParameters = (searchQueryParamsName: string) => {
