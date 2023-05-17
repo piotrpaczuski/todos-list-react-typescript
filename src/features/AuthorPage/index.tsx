@@ -1,12 +1,10 @@
-import React from "react";
-
 import Header from "../../common/Header";
 import Section from "../../common/Section";
 
 import { StyledWrapper } from "../styledWrapper";
 import { StyledLink } from "./styled";
 
-const AuthorPage: React.FC = () => (
+const AuthorPage = () => (
   <>
     <Header header={"O autorze"} />
     <Section

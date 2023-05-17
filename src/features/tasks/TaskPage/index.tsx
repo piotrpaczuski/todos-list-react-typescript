@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -9,7 +8,7 @@ import { RootState } from "../../../store";
 
 import { StyledWrapper } from "../../styledWrapper";
 
-const TaskPage: React.FC = () => {
+const TaskPage = () => {
   const { id } = useParams<{ id: string }>();
   const task = useSelector((state: RootState) => getTaskById(state, id));
 

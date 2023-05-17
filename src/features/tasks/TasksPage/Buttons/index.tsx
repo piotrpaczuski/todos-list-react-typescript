@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -13,7 +12,7 @@ import {
 
 import { StyledButton, StyledButtons } from "./styled";
 
-export const Buttons: React.FC = () => {
+export const Buttons = () => {
   const tasks = useSelector(selectTasks);
   const hideDone = useSelector(selectHideDone);
   const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
@@ -38,7 +37,7 @@ export const Buttons: React.FC = () => {
   );
 };
 
-export const ExampleTasksButton: React.FC = () => {
+export const ExampleTasksButton = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
 
