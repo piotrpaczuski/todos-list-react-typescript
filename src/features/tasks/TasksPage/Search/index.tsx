@@ -1,5 +1,3 @@
-import React from "react";
-
 import { searchQueryParamsName } from "../searchQueryParamsName";
 import {
   useQueryParameters,
@@ -7,19 +5,16 @@ import {
 } from "../queryParameters";
 
 import { StyledInput, StyledWrapper } from "../../../styledWrapper";
+import { ChangeEventHandler } from "react";
 
-interface HandleChange {
-  target: HTMLInputElement | any;
-}
-
-const Search: React.FC = () => {
+const Search = () => {
   const query = useQueryParameters(searchQueryParamsName);
   const replaceQueryParameter = useReplaceQueryParameter();
 
-  const onInputChange = (event: HandleChange): void => {
+  const onInputChange: ChangeEventHandler<HTMLInputElement> = (event): void => {
     replaceQueryParameter({
       key: searchQueryParamsName,
-      value: event.target.value.trim() ? event.target.value : undefined,
+      value: event.target.value.trim() ? event.target.value : "",
     });
   };
 
