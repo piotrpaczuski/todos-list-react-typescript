@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Buttons, ExampleTasksButton } from "./Buttons";
 import Form from "./Form";
 import Header from "../../../common/Header";
@@ -7,7 +5,7 @@ import Section from "../../../common/Section";
 import Search from "./Search";
 import TaskList from "./TaskList";
 
-function TasksPage(): JSX.Element {
+function TasksPage() {
   return (
     <>
       <Header header={"Lista zadań"} />

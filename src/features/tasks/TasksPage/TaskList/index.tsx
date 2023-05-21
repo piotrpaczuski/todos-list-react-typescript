@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -20,7 +19,7 @@ import {
   StyledSpan,
 } from "./styled";
 
-const TaskList: React.FC = () => {
+const TaskList = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const query = searchParams.get(searchQueryParamsName) as string;
