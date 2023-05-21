@@ -21,7 +21,7 @@ import {
 const TaskList = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const query = searchParams.get(searchQueryParamsName) as string;
+  const query = searchParams.get(searchQueryParamsName) ?? "";
 
   const tasks = useAppSelector((state) => selectTaskByQuery(state, query));
   const hideDone = useAppSelector(selectHideDone);
