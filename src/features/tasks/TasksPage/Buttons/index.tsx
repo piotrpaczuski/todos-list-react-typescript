@@ -1,5 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
-
+import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import {
   fetchExampleTasks,
   selectHideDone,
@@ -13,10 +12,10 @@ import {
 import { StyledButton, StyledButtons } from "./styled";
 
 export const Buttons = () => {
-  const tasks = useSelector(selectTasks);
-  const hideDone = useSelector(selectHideDone);
-  const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
-  const dispatch = useDispatch();
+  const tasks = useAppSelector(selectTasks);
+  const hideDone = useAppSelector(selectHideDone);
+  const isEveryTaskDone = useAppSelector(selectIsEveryTaskDone);
+  const dispatch = useAppDispatch();
 
   return (
     <StyledButtons>
@@ -38,8 +37,8 @@ export const Buttons = () => {
 };
 
 export const ExampleTasksButton = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
+  const dispatch = useAppDispatch();
+  const isLoading = useAppSelector(selectIsLoading);
 
   return (
     <StyledButtons>

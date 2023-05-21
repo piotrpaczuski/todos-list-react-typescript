@@ -1,7 +1,7 @@
 import { SyntheticEvent, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 
+import { useAppDispatch } from "../../../../hooks";
 import { addTask } from "../../tasksSlice";
 
 import { StyledInput, StyledWrapper } from "../../../styledWrapper";
@@ -10,7 +10,7 @@ import { StyledButton, StyledForm } from "./styled";
 const Form = () => {
   const [newTaskContent, setNewTaskContent] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const onFormSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
