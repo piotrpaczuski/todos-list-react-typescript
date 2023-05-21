@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getTasksLocalStorage } from "./tasksLocalStorage";
-import { TasksTypes } from "./tasksTypes";
+import { Task } from "./tasksTypes";
 import { RootState } from "../../store";
 
 interface InitialStateTypes {
-  tasks: TasksTypes[];
+  tasks: Task[];
   hideDone: boolean;
   done: boolean;
   isLoading: boolean;
@@ -21,7 +21,7 @@ const tasksSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
-    addTask: ({ tasks }, { payload: task }: PayloadAction<TasksTypes>) => {
+    addTask: ({ tasks }, { payload: task }: PayloadAction<Task>) => {
       tasks.push(task);
     },
     toggleHideDone: (state) => {
@@ -40,7 +40,7 @@ const tasksSlice = createSlice({
       });
     },
     fetchExampleTasks: () => {},
-    setTasks: (state, { payload: tasks }: PayloadAction<TasksTypes[]>) => {
+    setTasks: (state, { payload: tasks }: PayloadAction<Task[]>) => {
       state.tasks = tasks;
     },
     setLoading: (state, { payload: loading }: PayloadAction<boolean>) => {
@@ -61,8 +61,7 @@ export const {
 
 export const selectHideDone = (state: RootState): boolean =>
   state.tasks.hideDone;
-export const selectTasks = (state: RootState): TasksTypes[] =>
-  state.tasks.tasks;
+export const selectTasks = (state: RootState): Task[] => state.tasks.tasks;
 export const selectIsLoading = (state: RootState): boolean =>
   state.tasks.isLoading;
 

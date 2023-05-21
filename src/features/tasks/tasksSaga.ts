@@ -14,14 +14,14 @@ import {
   setLoading,
   setTasks,
 } from "./tasksSlice";
-import { TasksTypes } from "./tasksTypes";
+import { Task } from "./tasksTypes";
 
 function* fetchExampleTasksHandler() {
   yield put(setLoading(true));
   yield delay(1000);
 
   try {
-    const exampleTasks: TasksTypes[] = yield call(getExampleTasks);
+    const exampleTasks: Task[] = yield call(getExampleTasks);
     yield put(setTasks(exampleTasks));
   } catch (error) {
     yield call(console.error, "Błąd pobierania przykładowych zadań!!!");
@@ -30,7 +30,7 @@ function* fetchExampleTasksHandler() {
 }
 
 function* saveTasksInLocalStorage() {
-  const tasks: TasksTypes[] = yield select(selectTasks);
+  const tasks: Task[] = yield select(selectTasks);
   yield call(setTasksLocalStorage, tasks);
 }
 
